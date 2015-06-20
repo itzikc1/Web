@@ -9,7 +9,7 @@ namespace TheWeb.Dal
 {
     public class MasterDb : DbContext
     {
-
+        public MasterDb() { }
         public DbSet<project> projects { get; set; }
         public DbSet<student> students { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

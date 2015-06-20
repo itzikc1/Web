@@ -1,0 +1,70 @@
+﻿@model TheWeb.Models.project
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>project</legend>
+
+        @Html.HiddenFor(model => model.IDproject)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NameProject)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NameProject)
+            @Html.ValidationMessageFor(model => model.NameProject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.deadlineToFinish)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.deadlineToFinish)
+            @Html.ValidationMessageFor(model => model.deadlineToFinish)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.local)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.local)
+            @Html.ValidationMessageFor(model => model.local)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AboutTheProject)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AboutTheProject)
+            @Html.ValidationMessageFor(model => model.AboutTheProject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emailContact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emailContact)
+            @Html.ValidationMessageFor(model => model.emailContact)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
