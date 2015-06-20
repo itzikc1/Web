@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using TheWeb.Models;
 
-namespace TheWeb.Filters
+namespace TheWeb.Filters 
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
