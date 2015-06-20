@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TheWeb.Models.project>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameProject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deadlineToFinish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutTheProject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailContact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameProject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deadlineToFinish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutTheProject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailContact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDproject }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDproject }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDproject })
+        </td>
+    </tr>
+}
+
+</table>
