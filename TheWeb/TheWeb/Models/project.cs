@@ -17,6 +17,8 @@ namespace TheWeb.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)] 
         public int IDproject { get; set; }
         public string NameProject { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime deadlineToFinish { get; set; }
         public string local { get; set; }
         public string AboutTheProject { get; set; }

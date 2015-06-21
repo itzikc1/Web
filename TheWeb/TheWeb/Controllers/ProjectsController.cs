@@ -48,7 +48,7 @@ namespace TheWeb.Controllers
 
         //
         // GET: /Projects/Create
-
+           [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -79,7 +79,7 @@ namespace TheWeb.Controllers
 
         //
         // GET: /Projects/Edit/5
-
+      [Authorize]
         public ActionResult Edit(int id = 0)
         {
             project project = db.projects.Find(id);
