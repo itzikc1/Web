@@ -19,11 +19,20 @@ namespace TheWeb.Controllers
         //
         // GET: /Projects/
 
-        public ActionResult Index()
-        {
-            return View(db.projects.ToList());
-        }
-
+       
+        public ActionResult Index(string searchString) 
+{           
+     var project = from m in db.projects 
+                  select m; 
+ 
+    if (!String.IsNullOrEmpty(searchString)) 
+    { 
+        project = project.Where(s => s.NameProject.Contains(searchString)); 
+    } 
+ 
+    return View(project); 
+}
+        
         //
         // GET: /Projects/Details/5
 
