@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace TheWeb.Dal
     {
         public Date() { }
         public DbSet<project> projects { get; set; }
+     
         public DbSet<student> students { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

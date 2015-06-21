@@ -13,8 +13,8 @@ namespace TheWeb.Models
 {
     public class project
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key]
+        
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)] 
         public int IDproject { get; set; }
         public string NameProject { get; set; }
         public DateTime deadlineToFinish { get; set; }
