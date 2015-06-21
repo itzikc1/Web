@@ -13,7 +13,7 @@ namespace TheWeb.Controllers
     public class ProjectsController : Controller
     {
 
-        int flag = 2;
+        
         private Date db = new Date();
 
         //
@@ -52,15 +52,18 @@ namespace TheWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(project project)
         {
+            
+           while(db.projects.Find(project.IDproject) != null)
+           {
+               project.IDproject++;
+           }
+           if (ModelState.IsValid)
+           {
 
-            project.IDproject = ++flag;
-            if (ModelState.IsValid)
-            {
-                
-                db.projects.Add(project);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+               db.projects.Add(project);
+               db.SaveChanges();
+               return RedirectToAction("Index");
+           }
 
             return View(project);
         }

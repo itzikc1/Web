@@ -9,6 +9,37 @@
     @Scripts.Render("~/bundles/modernizr")*@
 
         <link href="~/Content/Site.css" rel="stylesheet" />
+
+        <script src="http://maps.googleapis.com/maps/api/js">
+        </script>
+
+        <script>
+            var myCenter = new google.maps.LatLng(31.9655011, 34.7882123);
+
+            function initialize() {
+                var mapProp = {
+                    center: myCenter,
+                    zoom: 5,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                    title: 'Click to zoom'
+                });
+
+                marker.setMap(map);
+
+                // Zoom to 9 when clicking on marker
+                google.maps.event.addListener(marker, 'click', function () {
+                    map.setZoom(9);
+                    map.setCenter(marker.getPosition());
+                });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
     </head>
 <body>
 
@@ -50,6 +81,7 @@
 
         </ul>
     </nav>
+    
 
 
     <div id="render">
@@ -89,6 +121,16 @@
                     <li><a href="#">Lorem ipsum dolor sit amet</a></li>
                     <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
                 </ul>
+            </section>
+            <section id="popular">
+                <ul>
+                    <li><a href="https://www.youtube.com/channel/UCuoAVLUR52sLJ14CBjf3QUQ" target="_new"><div id="youtubeIcon" class="elements"></div></a></li>
+                    <li><a href="https://www.facebook.com/foundationatlas/timeline" target="_new"><div id="facebookIcon" class="elements"></div></a></li>
+                </ul>
+
+
+
+
             </section>
         </div>
     </footer>
