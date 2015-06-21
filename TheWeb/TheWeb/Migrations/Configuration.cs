@@ -5,14 +5,14 @@ namespace TheWeb.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TheWeb.Dal.MasterDb>
+    internal sealed class Configuration : DbMigrationsConfiguration<TheWeb.Dal.Date>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(TheWeb.Dal.MasterDb context)
+        protected override void Seed(TheWeb.Dal.Date context)
         {
             //  This method will be called after migrating to the latest version.
 
