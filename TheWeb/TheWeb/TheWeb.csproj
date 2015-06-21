@@ -267,7 +267,6 @@
     <Content Include="Images\media.jpg" />
     <Content Include="Images\Science.jpg" />
     <Content Include="Images\speed.jpg" />
-    <Content Include="Scripts\JavaScript1.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
