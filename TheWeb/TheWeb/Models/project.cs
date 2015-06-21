@@ -22,6 +22,7 @@ namespace TheWeb.Models
         public DateTime deadlineToFinish { get; set; }
         public string local { get; set; }
         public string AboutTheProject { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string emailContact { get; set; }
 
 
