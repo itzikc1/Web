@@ -91,7 +91,7 @@ namespace TheWeb.Controllers
 
         //
         // GET: /Projects/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             project project = db.projects.Find(id);
