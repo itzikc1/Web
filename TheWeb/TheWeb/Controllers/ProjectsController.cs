@@ -12,7 +12,7 @@ namespace TheWeb.Controllers
 {
     public class ProjectsController : Controller
     {
-        private MasterDb db = new MasterDb();
+        private Date db = new Date();
 
         //
         // GET: /Projects/
