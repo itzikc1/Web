@@ -1,46 +1,46 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>My MVC Application</title>
-      
-        <meta name="viewport" content="width=device-width" />
-      @*  @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")*@
+<head>
+    <meta charset="utf-8" />
+    <title>My MVC Application</title>
 
-        <link href="~/Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    @*  @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
 
-        <script src="http://maps.googleapis.com/maps/api/js">
-        </script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
 
-        <script>
-            var myCenter = new google.maps.LatLng(31.9655011, 34.7882123);
+    <script src="http://maps.googleapis.com/maps/api/js">
+    </script>
 
-            function initialize() {
-                var mapProp = {
-                    center: myCenter,
-                    zoom: 5,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
+    <script>
+        var myCenter = new google.maps.LatLng(31.9655011, 34.7882123);
 
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
 
-                var marker = new google.maps.Marker({
-                    position: myCenter,
-                    title: 'Click to zoom'
-                });
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-                marker.setMap(map);
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                title: 'Click to zoom'
+            });
 
-                // Zoom to 9 when clicking on marker
-                google.maps.event.addListener(marker, 'click', function () {
-                    map.setZoom(9);
-                    map.setCenter(marker.getPosition());
-                });
-            }
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
-    </head>
+            marker.setMap(map);
+
+            // Zoom to 9 when clicking on marker
+            google.maps.event.addListener(marker, 'click', function () {
+                map.setZoom(9);
+                map.setCenter(marker.getPosition());
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
 <body>
 
     <!-- Navigation -->
@@ -49,8 +49,7 @@
 
         <ul>
             <li><a href="/Home"><img src="http://placehold.it/150x50&amp;text=Logo" style="  width: 150px; "></a></li>
-            <li><a href="/Home/Project">Project</a></li>
-            <li><a href="/Projects/Index">My Project</a></li>
+            <li><a href="/Projects/Index">Projects</a></li>
             <li><a href="/Home/About">About</a></li>
             <li>
 
@@ -74,14 +73,14 @@
                         <section id="login">
                             @Html.Partial("_LoginPartial")
                         </section>
-                  
+
                     </li>
                 </ul>
             </li>
 
         </ul>
     </nav>
-    
+
 
 
     <div id="render">
@@ -98,32 +97,19 @@
                 <header>
                     <h3>About</h3>
                 </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+                <p>The best way to promote your business</p>
             </section>
-            <section id="blogroll">
+            <section id="success">
 
                 <header>
-                    <h3>Blogroll</h3>
+                    <h3>More tools for success</h3>
                 </header>
 
                 <ul>
-                    <li><a href="#">NETTUTS+</a></li>
-                    <li><a href="#">FreelanceSwitch</a></li>
+                    <li><a href="https://www.kickstarter.com/">For financing</a></li>
+                    <li><a href="http://www.colman.ac.il/Pages/default.aspx">Get educated</a></li>
                 </ul>
             </section>
-            <section id="popular">
-                <header>
-
-                    <h3>Popular</h3>
-                </header>
-                <ul>
-                    <li><a href="#">This is the title of a blog post</a></li>
-                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                    <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
-                </ul>
-            </section>
-           
-
 
         </div>
     </footer>
