@@ -9,7 +9,7 @@ namespace TheWeb.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(TheWeb.Dal.Date context)

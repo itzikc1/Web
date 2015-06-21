@@ -16,7 +16,7 @@ namespace TheWeb.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int IDproject { get; set; }
-        public int NameProject { get; set; }
+        public string NameProject { get; set; }
         public DateTime deadlineToFinish { get; set; }
         public string local { get; set; }
         public string AboutTheProject { get; set; }
