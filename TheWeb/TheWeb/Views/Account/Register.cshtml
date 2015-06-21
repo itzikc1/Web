@@ -3,34 +3,28 @@
     ViewBag.Title = "Register";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
-</hgroup>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
 
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword) 
-            </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
-}
+
+    
+
+    <div class="wrapper">
+        <form class="form-signin" action="/Account/Register" method="post" novalidate="novalidate">
+           @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+             <h2 class="form-signin-heading">welcome</h2>
+            <input value="" id="UserName" data-val="true" data-val-required="The User name field is required." type="text" class="form-control" name="UserName" placeholder="User Name" required="" autofocus="" />
+            <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" type="password" placeholder="password" style="margin-bottom: 0px;">
+            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password" placeholder="Confirm Password">
+
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Register">Register</button>
+        </form>
+</div>
+  
+
+
 
 
 @section Scripts {
