@@ -6,9 +6,9 @@
 
 
 
-<p>
+
     @Html.ActionLink("Create New", "Create")
-    
+   
    
     @using (Html.BeginForm("Index", "Projects", FormMethod.Get))
     {
@@ -18,7 +18,7 @@
     </p>
     }
     
-</p>
+
 @*
     <table>
         <tr>
@@ -43,7 +43,8 @@
 
     </table>
 *@
-@foreach (var item in Model)
+
+@foreach (var item  in Model)
 {
     
 
