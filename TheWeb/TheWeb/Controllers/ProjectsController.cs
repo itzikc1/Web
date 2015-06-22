@@ -22,15 +22,18 @@ namespace TheWeb.Controllers
        
         public ActionResult Index(string searchString) 
 {           
-     var project = from m in db.projects 
-                  select m; 
- 
+     var project1 = from m in db.projects 
+                  select m;
+
+     
     if (!String.IsNullOrEmpty(searchString)) 
-    { 
-        project = project.Where(s => s.NameProject.Contains(searchString)); 
-    } 
+    {
+      
+        project1 = project1.Where(s => s.NameProject.Contains(searchString));
  
-    return View(project); 
+    }
+    
+    return View(project1); 
 }
         
         //
