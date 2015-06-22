@@ -79,7 +79,8 @@ namespace TheWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(project project)
         {
-            
+           
+ 
            while(db.projects.Find(project.IDproject) != null)
            {
                project.IDproject++;
@@ -91,7 +92,7 @@ namespace TheWeb.Controllers
                db.SaveChanges();
                return RedirectToAction("Index");
            }
-
+           
             return View(project);
         }
 

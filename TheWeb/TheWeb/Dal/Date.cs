@@ -13,7 +13,7 @@ namespace TheWeb.Dal
     {
         public Date() { }
         public DbSet<project> projects { get; set; }
-     
+        public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<student> students { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -44,20 +44,19 @@
 <body>
 
     <!-- Navigation -->
-    <nav style="font-family: Arial; ">
+    <nav style="font-family: Verdana, Geneva, sans-serif; ">
 
 
         <ul>
             <li><a href="/Home"><img src="http://placehold.it/150x50&amp;text=Logo" style="  width: 150px; "></a></li>
             <li><a href="/Projects/Index">Projects </a></li>
             <li><a href="/Home/About">About</a></li>
-            <li>
+            <li style="padding-right: 0px;">
 
                 <form class="navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control pull-right" style="width: 200px; margin-right: 0px;background-color: white;" placeholder="Search">
+                        <input type="text" class="form-control pull-right" style="width: 260px; margin-right: 0px;background-color: white;" placeholder="Search">
                         <span class="input-group-btn">
-
                             <button type="submit" class="btn btn-default">
                                 <span class="glyphicon glyphicon-search">
                                     <span class="sr-only">Search</span>
@@ -67,10 +66,12 @@
                         </span>
                     </div>
                 </form>
+
             </li>
+            <li><a href="/Projects/Create">Create your project</a></li>
             <li>
                 <ul>
-                    <li>
+                    <li >
                         <section id="login">
                             @Html.Partial("_LoginPartial")
                         </section>
