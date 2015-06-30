@@ -11,8 +11,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheWeb.Models
 {
+    
+
     public class project
     {
+       
         
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)] 
         public int IDproject { get; set; }
@@ -24,6 +27,7 @@ namespace TheWeb.Models
         public string AboutTheProject { get; set; }
         [DataType(DataType.EmailAddress)]
         public string emailContact { get; set; }
+        public string Category { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
