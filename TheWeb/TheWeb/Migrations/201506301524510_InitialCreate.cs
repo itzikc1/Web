@@ -7,12 +7,10 @@ namespace TheWeb.Migrations
     {
         public override void Up()
         {
-            AlterColumn("dbo.project", "NameProject", c => c.String());
         }
         
-        public override void Down()
+        public override void Down() 
         {
-            AlterColumn("dbo.project", "NameProject", c => c.Int(nullable: false));
         }
     }
 }

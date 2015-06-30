@@ -14,8 +14,7 @@ namespace TheWeb.Models
     public class student
     {
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key]
+       [Key, DatabaseGenerated(DatabaseGeneratedOption.None)] 
         public int IDstudent { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

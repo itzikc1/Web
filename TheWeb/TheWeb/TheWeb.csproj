@@ -71,7 +71,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -213,9 +214,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506211206189_InitialCreate.cs" />
-    <Compile Include="Migrations\201506211206189_InitialCreate.Designer.cs">
-      <DependentUpon>201506211206189_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201506301524510_InitialCreate.cs" />
+    <Compile Include="Migrations\201506301524510_InitialCreate.Designer.cs">
+      <DependentUpon>201506301524510_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -346,8 +347,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506211206189_InitialCreate.resx">
-      <DependentUpon>201506211206189_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506301524510_InitialCreate.resx">
+      <DependentUpon>201506301524510_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
