@@ -22,15 +22,33 @@ namespace TheWeb.Controllers
        
         public ActionResult Index(string searchString) 
 {           
-     var project = from m in db.projects 
-                  select m; 
- 
+     var project1 = from m in db.projects 
+                  select m;
+     var project2 = from m in db.projects
+                    select m;
+
+     
     if (!String.IsNullOrEmpty(searchString)) 
-    { 
-        project = project.Where(s => s.NameProject.Contains(searchString)); 
-    } 
- 
-    return View(project); 
+    {
+        int i=0;
+       
+        project1 = project1.Where(s => s.NameProject.Contains(searchString));
+        foreach (var item in project1)
+            i++;
+        
+        if(i!=0)
+        return View(project1);
+
+        i = 0;
+        project2 = project2.Where(s => s.local.Contains(searchString));
+        foreach (var item in project2)
+              i++;
+
+        if (i != 0)
+            return View(project2); 
+    }
+
+    return View(project1); 
 }
         
         //
@@ -61,7 +79,8 @@ namespace TheWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(project project)
         {
-            
+           
+ 
            while(db.projects.Find(project.IDproject) != null)
            {
                project.IDproject++;
@@ -73,7 +92,7 @@ namespace TheWeb.Controllers
                db.SaveChanges();
                return RedirectToAction("Index");
            }
-
+           
             return View(project);
         }
 

@@ -25,6 +25,7 @@ namespace TheWeb.Models
         [DataType(DataType.EmailAddress)]
         public string emailContact { get; set; }
 
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 
     }
 }

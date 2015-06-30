@@ -17,5 +17,8 @@ namespace TheWeb.Models
         public string Email { get; set; }
         public DateTime Bebirthday { get; set; }
 
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
+
+
     }
 }

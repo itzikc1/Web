@@ -4,65 +4,64 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<script src="~/Scripts/JavaScript1.js"></script>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="col-md-5">
+            <div class="form-area">
+                <form role="form" novalidate="novalidate" action="/Projects/Create" method="post">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
 
-    <fieldset>
-        <legend>project</legend>
+                    <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Create New Project</h3>
+                    <div class="form-group">
+                        <input class="form-control" id="name" name="Name Project" value="" type="text" placeholder="Project Name">
+                        <span class="field-validation-valid" data-valmsg-for="NameProject" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NameProject)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NameProject)
-            @Html.ValidationMessageFor(model => model.NameProject)
-        </div>
+                        <input class="form-control" data-val="true" data-val-date="The field deadlineToFinish must be a date." data-val-required="The deadlineToFinish field is required." id="deadlineToFinish" name="deadlineToFinish" value="" type="date" placeholder="dead line To Finish" required>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.deadlineToFinish)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.deadlineToFinish)
-            @Html.ValidationMessageFor(model => model.deadlineToFinish)
-        </div>
+                    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.local)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.local)
-            @Html.ValidationMessageFor(model => model.local)
-        </div>
+                    <div class="form-group">
+                        <input class="form-control" id="local" name="local" value="" type="text" placeholder="local">
+                        <span class="field-validation-valid" data-valmsg-for="local" data-valmsg-replace="true"></span>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AboutTheProject)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AboutTheProject)
-            @Html.ValidationMessageFor(model => model.AboutTheProject)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.emailContact)
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="AboutTheProject" name="AboutTheProject" placeholder="About The Project" maxlength="140" value="" type="text">
+                       
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="emailContact" name="emailContact" placeholder="email Contact" required>
+                        <span class="field-validation-valid" data-valmsg-for="emailContact" data-valmsg-replace="true"></span>
+                    </div>
+
+                    
+
+                    <button value="Create" type="submit" id=" submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+                  @*  <p>
+        <input value="Create" type="submit">
+    </p>*@
+                </form>
+
+
+                <div>
+                    <a href="/Projects">Back to List</a>
+                </div>
+
+
+
+
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.emailContact)
-            @Html.ValidationMessageFor(model => model.emailContact)
-        </div>
+    </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    |@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
