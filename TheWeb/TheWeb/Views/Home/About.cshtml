@@ -1,6 +1,11 @@
-﻿@{
+﻿ @{
     ViewBag.Title = "About";
 }
+
+  @{
+      int i = 0;  
+  }  
+ 
 
 @section Scripts{
     <div id="googleMap" style="width:500px;height:380px;" ></div>
@@ -8,7 +13,21 @@
 
      <div>
         <header><h1>The Idea</h1></header>
-        <small>Subtext for header</small>
+       
+         @foreach (var item in Model)
+         {
+           
+             i++;
+         }
+
+
+
+           
+         <p>The number of project in web site are: @i</p>
+        
+        
+      
+          <small>Subtext for header</small>
     </div>
     <div>
         <header><h1>Vision</h1></header>
