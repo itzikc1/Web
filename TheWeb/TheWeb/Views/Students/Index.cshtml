@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNet.Identity;
+﻿
 @model IEnumerable<TheWeb.Models.student>
 
 @{
@@ -34,7 +34,7 @@
     </tr>
 
 @foreach (var item in Model) {
-     if (item.Name == User.Identity.GetUserName() || User.IsInRole("admin"))
+
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
