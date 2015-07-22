@@ -46,6 +46,14 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.local)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.local)
+            @Html.ValidationMessageFor(model => model.local)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.Years)
         </div>
         <div class="editor-field">

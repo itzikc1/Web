@@ -50,15 +50,31 @@ namespace TheWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(student student)
         {
-            if (ModelState.IsValid)
-            {
-                db.students.Add(student);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            
+           while(db.students.Find(student.IDstudent) != null)
+           {
+               student.IDstudent++;
+           }
+           if (ModelState.IsValid)
+           {
 
+               db.students.Add(student);
+               db.SaveChanges();
+               return RedirectToAction("Index");
+           }
+           
             return View(student);
         }
+        
+        //    if (ModelState.IsValid)
+           // {
+            //    db.students.Add(student);
+           // /    db.SaveChanges();
+           //     return RedirectToAction("Index");
+           // }
+
+           // return View(student);
+       // }
 
         //
         // GET: /Students/Edit/5

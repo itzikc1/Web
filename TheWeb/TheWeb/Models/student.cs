@@ -20,6 +20,7 @@ namespace TheWeb.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime Bebirthday { get; set; }
+        public string local { get; set; }
         public int Years { get; set; }
         public string Category { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }

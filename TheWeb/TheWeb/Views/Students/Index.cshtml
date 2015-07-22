@@ -1,4 +1,5 @@
-﻿@model IEnumerable<TheWeb.Models.student>
+﻿@using Microsoft.AspNet.Identity;
+@model IEnumerable<TheWeb.Models.student>
 
 @{
     ViewBag.Title = "Index";
@@ -33,6 +34,7 @@
     </tr>
 
 @foreach (var item in Model) {
+     if (item.Name == User.Identity.GetUserName() || User.IsInRole("admin"))
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -45,6 +47,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Bebirthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.local)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Years)
