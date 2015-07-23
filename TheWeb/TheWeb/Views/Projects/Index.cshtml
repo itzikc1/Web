@@ -4,22 +4,129 @@
     ViewBag.Title = "Index";
 }
 
+@Html.ActionLink("Create New", "Create")
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" placeholder="Search for snippets" name="local" />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="contain">name</label>
+                                        <input class="form-control" type="text" id="name" name="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contain">local</label>
+                                        <input class="form-control" type="text" id="local" name="local" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contain">email Contact</label>
+                                        <input class="form-control" type="text" id="emailContact" name="emailContact" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-    @Html.ActionLink("Create New", "Create")
-   
-   
-    @using (Html.BeginForm("Index", "Projects", FormMethod.Get))
-    {
-    <p>
-        Title: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Filter" />
-    </p>
-    }
-    
 
 @*
+        <form method="get">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                    </span>
+                    <input type="text" class="form-control" name="name" placeholder="Search for name">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                    </span>
+                    <input type="text" class="form-control" name="local" placeholder="Search for local">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-3">
+                <div class="input-group">
+
+                    <input type="text" class="form-control" name="emailContact" placeholder="Search for email Contact">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+
+    </form>
+        <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="input-group" id="adv-search">
+                           <input type="text" class="form-control" placeholder="Search for snippets" />
+                           <div class="input-group-btn">
+                               <div class="btn-group" role="group">
+                                   <div class="dropdown dropdown-lg">
+                                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                       <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                           <form class="form-horizontal" role="form">
+                                               <div class="form-group">
+                                                   <label for="contain">name</label>
+                                                   <input class="form-control" type="text" />
+                                               </div>
+                                               <div class="form-group">
+                                                   <label for="contain">local</label>
+                                                   <input class="form-control" type="text" />
+                                               </div>
+                                               <div class="form-group">
+                                                   <label for="contain">email Contact</label>
+                                                   <input class="form-control" type="text" />
+                                               </div>
+                                               <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                           </form>
+                                       </div>
+                                   </div>
+                                   <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+
+
+
+
+
+
+                       @using (Html.BeginForm("Index", "Projects", FormMethod.Get))
+               {
+               <p>
+                   <div>
+                       Title: @Html.TextBox("SearchString") <br />
+                       <input type="submit" value="Filter" />
+                   </div>
+               </p>
+               }
+
+
     <table>
         <tr>
             <th>
@@ -44,59 +151,91 @@
     </table>
 *@
 
-@foreach (var item  in Model)
-{
+    @foreach (var item in Model)
+    {
 
-    <div style="display:inline-block; padding-right:50px;">
-        <div class="thumbnail" style="width: 300px; ">
-            <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAMH0lEQVR4Xu3bZ48cxRYG4DaYZILJWYAR2YjM//8BZGMwSWSRsckZfPW21KtmvGb3YF/XHPT0p9VsTdfpp2peVdf0HDh58uTpyUGAAIEGAgcEVoNRUiIBArOAwDIRCBBoIyCw2gyVQgkQEFjmAAECbQQEVpuhUigBAgLLHCBAoI2AwGozVAolQEBgmQMECLQREFhthkqhBAgILHOAAIE2AgKrzVAplAABgWUOECDQRkBgtRkqhRIgILDMAQIE2ggIrDZDpVACBASWOUCAQBsBgdVmqBRKgIDAMgcIEGgjILDaDJVCCRAQWOYAAQJtBARWm6FSKAECAsscIECgjYDAajNUCiVAQGCZAwQItBEQWG2GSqEECAgsc4AAgTYCAqvNUCmUAAGBZQ4QINBGQGC1GSqFEiAgsMwBAgTaCAisNkOlUAIEBJY5QIBAGwGB1WaoFEqAgMAyBwgQaCMgsNoMlUIJEBBY5gABAm0EBFaboVIoAQICyxwgQKCNgMBqM1QKJUBAYJkDBAi0ERBYbYZKoQQICCxzgACBNgICq81QKZQAAYFlDhAg0EZAYLUZKoUSICCwzAECBNoICKw2Q6VQAgQEljlAgEAbAYHVZqgUSoCAwDIHCBBoIyCw2gyVQgkQEFjmAAECbQQEVpuhUigBAgLLHCBAoI2AwGozVAolQEBgmQMECLQREFhthkqhBAgILHOAAIE2AgKrzVAplAABgWUOECDQRkBgtRkqhRIgILDMAQIE2ggIrDZDpVACBASWOUCAQBsBgdVmqBRKgIDAMgcIEGgjILDaDJVCCRAQWOYAAQJtBARWm6FSKAECAsscIECgjYDAajNUCiVAQGCZAwQItBEQWG2GSqEECAgsc4AAgTYCAqvNUCmUAAGBZQ4QINBGQGC1GSqFEiAgsMwBAgTaCAisNkOlUAIEBJY5QIBAGwGB1WaoFEqAgMAyBwgQaCMgsNoMlUIJEBBY5gABAm0EBFaboVIoAQICyxwgQKCNgMBqM1QKJUBAYJkDBAi0ERBYbYZKoQQICCxzgACBNgICq81QKZQAAYH1H5oDX3311fTOO+9MP/7443T69Onp0ksvne68887pyJEj04EDB3auNP979913p48++mj6448/posuumg6fPjw9MADD0xXX33130Ty/7feemv6/PPPpz///HO6+OKLp+uvv3566KGHpssuu+xf6X377bdznd999918ztR25ZVXTvfdd9904403/u2cuab0/9NPP82vX3HFFdM999wz3XHHHX9rV7mmf1W0N22FgMDaimE49yISKK+//vocAJtHQisBsxxp98knn5zRLqHxxBNPzKGQI+d65ZVXppMnT57R9rrrrpsef/zx6eDBg6Xiv/nmm+nYsWPTb7/9dsb7Eoap87bbbpv/d7Zr2myXtvu9plKxGm+dgMDauiGpF5TVxcsvvzx9/fXX8wooK6UESl7LyiQroSeffHK66qqrplOnTs0hlJXTtddeO4fOF198Ma9iElBZuTz88MNzEQm1N954Y/rrr7+mW2+9dX79vffemz744IP5//fff/901113lQp+9dVX5yDKquruu++e7r333unLL7+c+/n999/nld5TTz01n/PFF1+cshrLSvHRRx+dLr/88p1rSrg+88wz0yWXXFK6plKxGm+dgMDauiGpF/Trr79Ob7755pTVS8IpH/h8kBNMCYP8nddyu/f222/PgZNgSwAliBJUL7zwwnyLliBI25xn/f4E3jXXXDMHYILkl19+mQMvoZHbywRZgjOvpW3Ov/SVK7r55punBx98cD5nzpEQSj8JoRzPPffcHE5LrQnUJViz4jp69Ojcbl3/I488Mt1yyy2la6rresc2CQisbRqN81hLVluvvfbafOuVldXTTz991hBLt8ePH58+++yzncA4dOjQTojl7yVcEkoJl4Tb8npuCxNieS37YQmm9JnASf/rFd5ul7g+5xJYOVdCOKu77G1l3ypHaszt3/r13YJ5t2va3J87j9xOdYEEBNYFgr6Q3SSoPv3007nLrJhyO7V8WJeVTFY2CaGETo7lPcvKKyulhFBWQ1lZJfDyv91WQzn3er8pYbXcquXWb69bx/V7lxBMMGVjfgnAZZM9r584cWJeFS4rr/1eU1aTjt4CAqv3+O1a/fPPPz/fHuZIyGSfKPtF67BZr5r2CqzsKz377LM7fW3eviWwskrK/lT2w9ZHvlHMPtkSdpsFp868L7e1OZYvCN5///05sNa3rssK62yBtdc1Caz+k11g9R/DM64gm9c58sFOgKw/9EvY7PXhXq+w9hNY6e+HH36YXnrppZ3wyT7VY489Nu9r7XZkzyphlf2wZTW4fEspsP6DE/M8XJLAOg+I23qK9TeCN9xww7wZ/m8CK7eEWWEtz3LttsKKwfrbyiWAlm/y9lpZbYbbEli5Jczm+rI6+qdbwr1C2AprW2fq/usSWPu3atfy+++/n/ehlscFEjpZAWVDfv3NYS5sc9M9e1z55jCrpr023Zdv+rJvlscT1s+C5VY0e1jrI3VlZbU8DLo8tpDbx+X48MMP52//EoJ7bbrv95psurebwmcULLD6j+HOc1QJpjw+sDwCsF5h3XTTTfNe0v/jsYYQpu8l4LIqypFv8jZXTnlcYflGMW12C6u8vq7dYw3/gUl6ni5BYJ0nyJGnWe8dJQASWLmNy9f92dROgOQJ8ttvv730kGXlwdH1M1cJmNSxPGC63nhft9vtifXFMas0D46OnFXb2bfA2s5xKVe1fnhz880JkOwDZQ8qt1h5jml57GHddvOnOcvDm1ntbB7rn+asf26T28PslSWw1iuuPJuVfbTlUYmzXeD6VnW3W8y8bzPoKtdUhvWGrRIQWFs1HOdWTDakE1w///zznj9+zpPpH3/88fxg514/fs6qKOfe7cfP698bbj5ztQ6c7INlPyvnShDuJ7DSJj9+znvyg+4c//Tj5/1e07kpe/dIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgp8D9TOmQ6K0s50AAAAABJRU5ErkJggg==" style="width: 300px; height: 200px;">
-            <div class="caption" >
-                <h3>Thumbnail label</h3>
-                <p>@Html.DisplayFor(modelItem => item.NameProject)</p>
-                <p>@Html.DisplayFor(modelItem => item.deadlineToFinish)</p>
-                <p>@Html.DisplayFor(modelItem => item.local)</p>
-                <p>@Html.DisplayFor(modelItem => item.AboutTheProject)</p>
-                <p>@Html.DisplayFor(modelItem => item.emailContact)</p>
-                <p>@Html.DisplayFor(modelItem => item.Category)</p>
-                <p>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.IDproject }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.IDproject }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.IDproject })
-                </p>
-                <p>
-                    <a href="#" class="btn btn-primary">Action</a>
-                    <a href="#" class="btn">Action</a>
-                </p>
+        <div style="display:inline-block; padding-right:50px;">
+            <div class="thumbnail" style="width: 300px; ">
+                <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64
+                     ,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAMH0lEQVR4Xu3bZ48cxRYG4DaYZILJWYAR2YjM//8BZGMwSWSRsckZfPW21Ktmv
+                     Gb3YF/XHPT0p9VsTdfpp2peVdf0HDh58uTpyUGAAIEGAgcEVoNRUiIBArOAwDIRCBBoIyCw2gyVQgkQEFjmAAECbQQEVpuhUigBAgLLHCBAoI2
+                     AwGozVAolQEBgmQMECLQREFhthkqhBAgILHOAAIE2AgKrzVAplAABgWUOECDQRkBgtRkqhRIgILDMAQIE2ggIrDZDpVACBASWOUCAQBsBgdVmqBRKgID
+                     AMgcIEGgjILDaDJVCCRAQWOYAAQJtBARWm6FSKAECAsscIECgjYDAajNUCiVAQGCZAwQItBEQWG2GSqEECAgsc4AAgTYCAqvNUCmUAAGBZQ4QINBGQ
+                     GC1GSqFEiAgsMwBAgTaCAisNkOlUAIEBJY5QIBAGwGB1WaoFEqAgMAyBwgQaCMgsNoMlUIJEBBY5gABAm0EBFaboVIoAQICyxwgQKCNgMBqM1QKJUBAY
+                     JkDBAi0ERBYbYZKoQQICCxzgACBNgICq81QKZQAAYFlDhAg0EZAYLUZKoUSICCwzAECBNoICKw2Q6VQAgQEljlAgEAbAYHVZqgUSoCAwDIHCBBoIyCw
+                     2gyVQgkQEFjmAAECbQQEVpuhUigBAgLLHCBAoI2AwGozVAolQEBgmQMECLQREFhthkqhBAgILHOAAIE2AgKrzVAplAABgWUOECDQRkBgtRkqhRIgILD
+                     MAQIE2ggIrDZDpVACBASWOUCAQBsBgdVmqBRKgIDAMgcIEGgjILDaDJVCCRAQWOYAAQJtBARWm6FSKAECAsscIECgjYDAajNUCiVAQGCZAwQItBEQWG
+                     2GSqEECAgsc4AAgTYCAqvNUCmUAAGBZQ4QINBGQGC1GSqFEiAgsMwBAgTaCAisNkOlUAIEBJY5QIBAGwGB1WaoFEqAgMAyBwgQaCMgsNoMlUIJEBBY5gA
+                     BAm0EBFaboVIoAQICyxwgQKCNgMBqM1QKJUBAYJkDBAi0ERBYbYZKoQQICCxzgACBNgICq81QKZQAAYH1H5oDX3311fTOO+9MP/7443T69Onp0ksvne
+                     68887pyJEj04EDB3auNP979913p48++mj6448/posuumg6fPjw9MADD0xXX33130Ty/7feemv6/PPPpz///HO6+OKLp+uvv3566KGHpssuu+xf6X37
+                     7bdznd999918ztR25ZVXTvfdd9904403/u2cuab0/9NPP82vX3HFFdM999wz3XHHHX9rV7mmf1W0N22FgMDaimE49yISKK+//vocAJtHQisBsxxp9
+                     8knn5zRLqHxxBNPzKGQI+d65ZVXppMnT57R9rrrrpsef/zx6eDBg6Xiv/nmm+nYsWPTb7/9dsb7Eoap87bbbpv/d7Zr2myXtvu9plKxGm+dgMDauiGpF
+                     5TVxcsvvzx9/fXX8wooK6UESl7LyiQroSeffHK66qqrplOnTs0hlJXTtddeO4fOF198Ma9iElBZuTz88MNzEQm1N954Y/rrr7+mW2+9dX79vffemz744IP5//
+                     fff/901113lQp+9dVX5yDKquruu++e7r333unLL7+c+/n999/nld5TTz01n/PFF1+cshrLSvHRRx+dLr/88p1rSrg+88wz0yWXXFK6plKxGm+dgMDauiGpF/
+                     Trr79Ob7755pTVS8IpH/h8kBNMCYP8nddyu/f222/PgZNgSwAliBJUL7zwwnyLliBI25xn/f4E3jXXXDMHYILkl19+mQMvoZHbywRZgjOvpW3Ov/SVK7r55p
+                     unBx98cD5nzpEQSj8JoRzPPffcHE5LrQnUJViz4jp69Ojcbl3/I488Mt1yyy2la6rresc2CQisbRqN81hLVluvvfbafOuVldXTTz991hBLt8ePH58+++yzn
+                     cA4dOjQTojl7yVcEkoJl4Tb8npuCxNieS37YQmm9JnASf/rFd5ul7g+5xJYOVdCOKu77G1l3ypHaszt3/r13YJ5t2va3J87j9xOdYEEBNYFgr6Q3SSoPv30
+                     07nLrJhyO7V8WJeVTFY2CaGETo7lPcvKKyulhFBWQ1lZJfDyv91WQzn3er8pYbXcquXWb69bx/V7lxBMMGVjfgnAZZM9r584cWJeFS4rr/1eU1aTjt4CAqv3
+                     +O1a/fPPPz/fHuZIyGSfKPtF67BZr5r2CqzsKz377LM7fW3eviWwskrK/lT2w9ZHvlHMPtkSdpsFp868L7e1OZYvCN5///05sNa3rssK62yBtdc1Caz+k11g9
+                     R/DM64gm9c58sFOgKw/9EvY7PXhXq+w9hNY6e+HH36YXnrppZ3wyT7VY489Nu9r7XZkzyphlf2wZTW4fEspsP6DE/M8XJLAOg+I23qK9TeCN9xww7wZ/m8CK7
+                     eEWWEtz3LttsKKwfrbyiWAlm/y9lpZbYbbEli5Jczm+rI6+qdbwr1C2AprW2fq/usSWPu3atfy+++/n/ehlscFEjpZAWVDfv3NYS5sc9M9e1z55jCrpr023Zd
+                     v+rJvlscT1s+C5VY0e1jrI3VlZbU8DLo8tpDbx+X48MMP52//EoJ7bbrv95psurebwmcULLD6j+HOc1QJpjw+sDwCsF5h3XTTTfNe0v/jsYYQpu8l4LIqypFv
+                     8jZXTnlcYflGMW12C6u8vq7dYw3/gUl6ni5BYJ0nyJGnWe8dJQASWLmNy9f92dROgOQJ8ttvv730kGXlwdH1M1cJmNSxPGC63nhft9vtifXFMas0D46O
+                     nFXb2bfA2s5xKVe1fnhz880JkOwDZQ8qt1h5jml57GHddvOnOcvDm1ntbB7rn+asf26T28PslSWw1iuuPJuVfbTlUYmzXeD6VnW3W8y8bzPoKtdUhvWGr
+                     RIQWFs1HOdWTDakE1w///zznj9+zpPpH3/88fxg514/fs6qKOfe7cfP698bbj5ztQ6c7INlPyvnShDuJ7DSJj9+znvyg+4c//Tj5/1e07kpe/dIAYE1Ul
+                     /fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKS
+                     AwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwa
+                     EyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASE
+                     FglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+v
+                     gkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIA
+                     YE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZ
+                     AYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSl
+                     waEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgpILBG6uubAIGSgMAqcWlMgMBIAYE1Ul/fBAiUBARWiUtjAgRGCgiskfr6JkCgJCCwSlwaEyAwUkBgjdTXNwECJQGBVeLSmACBkQICa6S+vgkQKAkIrBKXxgQIjBQQWCP19U2AQElAYJW4NCZAYKSAwBqpr28CBEoCAqvEpTEBAiMFBNZIfX0TIFASEFglLo0JEBgp8D9TOmQ6K0s50AAAAABJRU5ErkJggg==" style="width: 300px; height: 200px;">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>@Html.DisplayFor(modelItem => item.NameProject)</p>
+                    <p>@Html.DisplayFor(modelItem => item.deadlineToFinish)</p>
+                    <p>@Html.DisplayFor(modelItem => item.local)</p>
+                    <p>@Html.DisplayFor(modelItem => item.AboutTheProject)</p>
+                    <p>@Html.DisplayFor(modelItem => item.emailContact)</p>
+                    <p>@Html.DisplayFor(modelItem => item.Category)</p>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IDproject }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.IDproject }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IDproject })
+                    </p>
+                    <p>
+                        <a href="#" class="btn btn-primary">Action</a>
+                        <a href="#" class="btn">Action</a>
+                    </p>
+                </div>
             </div>
         </div>
-
-
-    </div>
-
-
-}
-
+    }
 
 @*<tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameProject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deadlineToFinish)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.local)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AboutTheProject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.emailContact)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.IDproject }) |
-            @Html.ActionLink("Details", "Details", new { id = item.IDproject }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.IDproject })
-        </td>
-    </tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deadlineToFinish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.local)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AboutTheProject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailContact)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDproject }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDproject }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDproject })
+            </td>
+        </tr>
 *@
+
+
+

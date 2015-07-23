@@ -53,20 +53,7 @@ namespace TheWeb.Controllers
 
               return View(about);
         }
-            /*
-            var ProjectQuery1 =
-             from project in db.projects
-             group project by project.local;
-            var query = db.students         // source
-            .Join(db.projects,         // target
-             c => c.Email,          // FK
-             cm => cm.emailContact,   // PK
-             (c, cm) => new { StudMail = c, ProMail = cm }) // project result
-             .Select(x => x.StudMail);  // select result2
- 
-            return View(ProjectQuery1);
-        }
-      */
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

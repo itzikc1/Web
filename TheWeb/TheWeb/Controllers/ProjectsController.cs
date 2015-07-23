@@ -19,38 +19,71 @@ namespace TheWeb.Controllers
         //
         // GET: /Projects/
 
+
+
+        public ActionResult Index(string name = null, string local = null, string emailContact = null)
+        {
+
+
+            var model = (from s in db.projects
+                         where name==null || s.NameProject.Contains(name) && s.local.Contains(local) && s.emailContact.Contains(emailContact)
+                         select s);
+            return View(model);
+
+        }
+        /*
+    
+         *  var project1 = from m in db.projects
+                           select m;
+         
+            if ((!String.IsNullOrEmpty(name)) || (!String.IsNullOrEmpty(local)) || (!String.IsNullOrEmpty(emailContact)))
+            {
+               
+            }
+
+  
+            return View(project1);
+         * 
+         * 
+         *             if (!String.IsNullOrEmpty(name))
+            {
+                var model = (from s in db.projects
+                             where s.NameProject.Contains(name)
+                             select s);
+                return View(model);
+            }
+   
+          
+         public ActionResult Index(string searchString = null) 
+ {           
+      var project1 = from m in db.projects 
+                   select m;
+      var project2 = from m in db.projects
+                     select m;
+
+     if (!String.IsNullOrEmpty(searchString)) 
+     {
+         int i=0;
        
-        public ActionResult Index(string searchString) 
-{           
-     var project1 = from m in db.projects 
-                  select m;
-     var project2 = from m in db.projects
-                    select m;
-
-     
-    if (!String.IsNullOrEmpty(searchString)) 
-    {
-        int i=0;
-       
-        project1 = project1.Where(s => s.NameProject.Contains(searchString));
-        foreach (var item in project1)
-            i++;
+         project1 = project1.Where(s => s.NameProject.Contains(searchString));
+         foreach (var item in project1)
+             i++;
         
-        if(i!=0)
-        return View(project1);
+         if(i!=0)
+         return View(project1);
 
-        i = 0;
-        project2 = project2.Where(s => s.local.Contains(searchString));
-        foreach (var item in project2)
-              i++;
+         i = 0;
+         project2 = project2.Where(s => s.local.Contains(searchString));
+         foreach (var item in project2)
+               i++;
 
-        if (i != 0)
-            return View(project2); 
-    }
+         if (i != 0)
+             return View(project2); 
+     }
 
-    return View(project1); 
-}
-        
+     return View(project1); 
+ }
+          */
         //
         // GET: /Projects/Details/5
 
