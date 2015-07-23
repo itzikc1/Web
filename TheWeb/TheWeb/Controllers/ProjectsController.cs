@@ -21,18 +21,19 @@ namespace TheWeb.Controllers
 
 
 
-        public ActionResult Index(string name = null, string local = null, string emailContact = null)
+        public ActionResult Index(string bb = null, string name = null, string local = null, string emailContact = null )
         {
 
 
             var model = (from s in db.projects
-                         where name==null || s.NameProject.Contains(name) && s.local.Contains(local) && s.emailContact.Contains(emailContact)
+                         where  name==null || s.NameProject.Contains(name) && s.local.Contains(local) && s.emailContact.Contains(emailContact) 
                          select s);
             return View(model);
 
         }
         /*
-    
+         * s.NameProject.Contains(bb)
+    || s.emailContact.Contains(emailContact)
          *  var project1 = from m in db.projects
                            select m;
          
