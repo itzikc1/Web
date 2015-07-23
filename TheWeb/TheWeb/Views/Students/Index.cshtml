@@ -1,98 +1,174 @@
-﻿
-@model IEnumerable<TheWeb.Models.student>
+﻿@model IEnumerable<TheWeb.Models.student>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="input-group" id="adv-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search for name" name="bb" />
+                </form>
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="contain">name</label>
+                                            <input class="form-control" type="text" id="name" placeholder="Search for name" name="name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contain">Last Name</label>
+                                            <input class="form-control" type="text" id="LastName" placeholder="Search for Last Name" name="LastName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contain">local</label>
+                                            <input class="form-control" type="text" id="local" placeholder="Search for local" name="local" />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-       <th>
-            Last Name  
-        </th>
-        <th>
-             Email
-        </th>
-        <th>
-            Bebirth day
-        </th>
-        <th>
-            Years
-        </th>
-        <th>
-            Category
-        </th>
-        <th> </th>
-    </tr>
+<table class="table">
 
 
+    <thead>
+        <tr>
+
+        <tr>
+            <th>
+
+                Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Bebirth day
+            </th>
+            <th>
+                Years
+            </th>
+            <th>
+                Category
+            </th>
+            <th> </th>
+        </tr>
+
+    </thead>
     @*
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bebirthday)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Years)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th></th>
-    </tr>
-*@
-@foreach (var item in Model) {
+                    <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bebirthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Years)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+               <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
 
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <th>    </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <th>    </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <th>    </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bebirthday)
-        </td>
-        <th>     </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.local)
-        </td>
-        <th>     </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.Years)
-        </td>
-        <th> </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDstudent }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDstudent }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDstudent })
-        </td>
-    </tr>
-}
+
+    *@
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <th>    </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <th>    </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <th>    </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bebirthday)
+                </td>
+                <th>     </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.local)
+                </td>
+                <th>     </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Years)
+                </td>
+                <th> </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDstudent }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IDstudent }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDstudent })
+                </td>
+            </tr>
+
+        </tbody>
+
+    }
 
 </table>
+
+
+

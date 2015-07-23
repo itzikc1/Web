@@ -17,11 +17,24 @@ namespace TheWeb.Controllers
         //
         // GET: /Students/
 
+
+        public ActionResult Index(string name = null, string LastName = null, string local = null)
+        {
+
+
+            var model = (from s in db.students
+                         where name == null || s.Name.Contains(name) && s.LastName.Contains(LastName) && s.local.Contains(local)
+                         select s);
+            return View(model);
+
+        }
+
+        /*
         public ActionResult Index()
         {
             return View(db.students.ToList());
         }
-
+        */
         //
         // GET: /Students/Details/5
 
