@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>The Web</title>
-    
+
     <meta name="viewport" content="width=device-width" />
     @*  @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
@@ -42,7 +42,7 @@
     </script>
 </head>
 <body>
-    
+
     <!-- Navigation -->
     <nav style="font-family: Verdana, Geneva, sans-serif; ">
 
@@ -70,9 +70,13 @@
 
             </li>
             <li><a href="/Projects/Create">Create your project</a></li>
+
+            <div style="margin: 15px 0px 0px; display: inline-block; text-align: center; width: 112px;"><noscript><div style="display: inline-block; padding: 2px 4px; margin: 0px 0px 5px; border: 1px solid rgb(204, 204, 204); text-align: center; background-color: transparent;"><a href="http://localtimes.info/Asia/Israel/Rehovot/" style="text-decoration: none; font-size: 13px; color: rgb(68, 56, 123);"><img src="http://localtimes.info/images/countries/il.png" ="" border=0 ="" style="border:0;margin:0;padding:0" =""> Rehovot</a></div></noscript>
+             <script type="text/javascript" src="http://localtimes.info/clock.php?continent=Asia&country=Israel&city=Rehovot&cp1_Hex=44387b&cp2_Hex=FFFFFF&cp3_Hex=000000&fwdt=112&ham=1&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&widget_number=1000"></script></div>
+
             <li>
                 <ul>
-                    <li >
+                    <li>
                         <section id="login">
                             @Html.Partial("_LoginPartial")
                         </section>
@@ -95,7 +99,11 @@
     </div>
     <!-- Footer -->
     <footer style="margin-bottom:auto">
+
+
+
         <div>
+
             <section id="about">
                 <header>
                     <h3>About</h3>
@@ -108,6 +116,8 @@
                     <h3>More tools for success</h3>
                 </header>
 
+
+
                 <ul>
                     <li><a href="https://www.kickstarter.com/">For financing</a></li>
                     <li><a href="http://www.colman.ac.il/Pages/default.aspx">Get educated</a></li>
@@ -115,6 +125,7 @@
             </section>
 
         </div>
+
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
