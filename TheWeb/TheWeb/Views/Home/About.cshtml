@@ -2,13 +2,13 @@
  
 
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "About Us:";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
+    <h1 id="tools" class="page-header"><a class="anchorjs-link " href="#tools" aria-label="Anchor link for: tools" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>About Us:</h1>
+        <h2>@ViewBag.Message</h2>
+    </hgroup>
 
 <article>
     <p>
@@ -19,7 +19,7 @@
         <label>Student in the same country with project :</label>@Model.Local
 
     </p>
-
+   
     <p>
         <label>Num Project in the site right now :</label>@Model.NumProject
     </p>
@@ -30,51 +30,65 @@
 @section Scripts{
     <div id="googleMap" style="width:500px;height:380px;"></div>
 
-
     <div>
-        <header><h1>The Idea</h1></header>
 }
-<small>Subtext for header</small>
+
 </div>
+    
     <div>
-        <header><h1>Vision</h1></header>
-        <small>Subtext for header</small>
-    </div>
-    <div>
-        <header><h1>Contact</h1></header>
-        <small>Subtext for header</small>
+
         <div class="bs-example">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="mdo">itzik</button>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="fat">tamir</button>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="getbootstrap">customer service</button>
-            <a target="_blank" title="הצטרפו אלינו לפייסבוק" href="https://he-il.facebook.com/college.org.il"><img src="~/Images/facebook.png" alt="חפשו אותנו בפייסבוק"></a>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="fb-like" data-href="https://he-il.facebook.com/college.org.il" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                            <h4 class="modal-title" id="exampleModalLabel">New message<a class="anchorjs-link" href="#exampleModalLabel"><span class="anchorjs-icon"></span></a></h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="control-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message-text" class="control-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
-                        </div>
-                    </div>
+
+ 
+            <div id="fb-root"></div>
+            <script>
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/il_he/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New message<a class="anchorjs-link" href="#exampleModalLabel"><span class="anchorjs-icon"></span></a></h4>
                 </div>
-            </div><!-- /.modal -->
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
         </div>
+    </div><!-- /.modal -->
+</div>
+
     </div>
-}
+
+
+
+
+
+   

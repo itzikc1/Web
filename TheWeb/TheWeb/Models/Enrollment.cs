@@ -16,5 +16,6 @@ namespace TheWeb.Models
 
         public virtual project Project { get; set; }
         public virtual student Student { get; set; }
+
     }
 }
