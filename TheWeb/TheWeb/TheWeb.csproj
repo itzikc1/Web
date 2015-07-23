@@ -220,6 +220,8 @@
       <DependentUpon>201506301524510_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\About.cs" />
+    <Compile Include="Models\AboutNum.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\project.cs" />

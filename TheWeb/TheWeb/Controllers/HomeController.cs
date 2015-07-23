@@ -4,7 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TheWeb.Dal;
+using System.Data;
+using System.Data.Entity;
 using TheWeb.Models;
+
 
 namespace TheWeb.Controllers
 {
@@ -22,26 +25,48 @@ namespace TheWeb.Controllers
 
         public ActionResult About(string q)
         {
+        
+            var about = new AboutNum();
+
+            int NumProject =
+              (from p in db.projects
+               group p by p.local).Count();
+            about.NumProject = NumProject;
+
+               int NumberOfStudentProject = (db.students         // source
+             .Join(db.projects,         // target
+              c => c.Email,          // FK
+              cm => cm.emailContact,   // PK
+              (c, cm) => new { StudMail = c, ProMail = cm }) // project result
+              .Select(x => x.StudMail)).Count();  // select result2
+               about.NumberOfStudentProject = NumberOfStudentProject;
+
+              int Local = (db.students         // source
+                .Join(db.projects,         // target
+                 c => c.local,          // FK
+                 cm => cm.local,   // PK
+                 (c, cm) => new { StudLocal = c, ProLocal = cm }) // project result
+                 .Select(x => x.StudLocal)).Count();  // select result2
+                 about.Local = Local;
+                  
 
 
+              return View(about);
+        }
+            /*
             var ProjectQuery1 =
              from project in db.projects
              group project by project.local;
-
-
             var query = db.students         // source
             .Join(db.projects,         // target
              c => c.Email,          // FK
              cm => cm.emailContact,   // PK
              (c, cm) => new { StudMail = c, ProMail = cm }) // project result
-             .Select(x => x.StudMail);  // select result
-
-
-
-
+             .Select(x => x.StudMail);  // select result2
+ 
             return View(ProjectQuery1);
         }
-
+      */
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -49,8 +74,9 @@ namespace TheWeb.Controllers
             return View();
         }
 
-
+        
 
         
     }
+
 }

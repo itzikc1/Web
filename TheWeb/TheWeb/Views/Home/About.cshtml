@@ -1,34 +1,41 @@
-﻿ @{
+﻿@model TheWeb.Models.AboutNum
+ 
+
+@{
     ViewBag.Title = "About";
 }
 
-  @{
-      int i = 0;  
-  }  
- 
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        <label>Number Of Student that open Project  :</label>@Model.NumberOfStudentProject
+    </p>
+
+    <p>
+        <label>Student in the same country with project :</label>@Model.Local
+
+    </p>
+
+    <p>
+        <label>Num Project in the site right now :</label>@Model.NumProject
+    </p>
+</article>
+
+
 
 @section Scripts{
-    <div id="googleMap" style="width:500px;height:380px;" ></div>
-   
+    <div id="googleMap" style="width:500px;height:380px;"></div>
 
-     <div>
+
+    <div>
         <header><h1>The Idea</h1></header>
-       
-         @foreach (var item in Model)
-         {
-           
-             i++;
-         }
-
-
-
-           
-         <p>The number of project in web site are: @i</p>
-        
-        
-      
-          <small>Subtext for header</small>
-    </div>
+}
+<small>Subtext for header</small>
+</div>
     <div>
         <header><h1>Vision</h1></header>
         <small>Subtext for header</small>
@@ -42,7 +49,7 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="getbootstrap">customer service</button>
             <a target="_blank" title="הצטרפו אלינו לפייסבוק" href="https://he-il.facebook.com/college.org.il"><img src="~/Images/facebook.png" alt="חפשו אותנו בפייסבוק"></a>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-               
+
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
