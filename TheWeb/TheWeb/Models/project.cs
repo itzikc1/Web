@@ -16,7 +16,6 @@ namespace TheWeb.Models
     public class project
     {
        
-        
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)] 
         public int IDproject { get; set; }
         public string NameProject { get; set; }

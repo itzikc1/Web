@@ -24,6 +24,5 @@ namespace TheWeb.Models
         public string Category { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
-
     }
 }
