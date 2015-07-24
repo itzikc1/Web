@@ -29,12 +29,6 @@ namespace TheWeb.Controllers
 
         }
 
-        /*
-        public ActionResult Index()
-        {
-            return View(db.students.ToList());
-        }
-        */
         //
         // GET: /Students/Details/5
 
@@ -78,16 +72,6 @@ namespace TheWeb.Controllers
            
             return View(student);
         }
-        
-        //    if (ModelState.IsValid)
-           // {
-            //    db.students.Add(student);
-           // /    db.SaveChanges();
-           //     return RedirectToAction("Index");
-           // }
-
-           // return View(student);
-       // }
 
         //
         // GET: /Students/Edit/5

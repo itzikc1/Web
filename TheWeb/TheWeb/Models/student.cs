@@ -7,10 +7,6 @@ using System.Web;
 
 namespace TheWeb.Models
 {
-   // public enum Category
-    //{
-   //     Science, Art, Food, Design, Engineer
-   // }
     public class student
     {
 

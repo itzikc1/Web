@@ -48,8 +48,6 @@ namespace TheWeb.Controllers
                  (c, cm) => new { StudLocal = c, ProLocal = cm }) // project result
                  .Select(x => x.StudLocal)).Count();  // select result2
                  about.Local = Local;
-                  
-
 
               return View(about);
         }

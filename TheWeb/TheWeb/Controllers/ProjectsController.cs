@@ -12,18 +12,14 @@ namespace TheWeb.Controllers
 {
     public class ProjectsController : Controller
     {
-
-        
+ 
         private Date db = new Date();
 
         //
         // GET: /Projects/
 
-
-
         public ActionResult Index(string bb = null, string name = null, string local = null, string emailContact = null )
         {
-
 
             var model = (from s in db.projects
                          where  name==null || s.NameProject.Contains(name) && s.local.Contains(local) && s.emailContact.Contains(emailContact) 
@@ -31,60 +27,7 @@ namespace TheWeb.Controllers
             return View(model);
 
         }
-        /*
-         * s.NameProject.Contains(bb)
-    || s.emailContact.Contains(emailContact)
-         *  var project1 = from m in db.projects
-                           select m;
-         
-            if ((!String.IsNullOrEmpty(name)) || (!String.IsNullOrEmpty(local)) || (!String.IsNullOrEmpty(emailContact)))
-            {
-               
-            }
 
-  
-            return View(project1);
-         * 
-         * 
-         *             if (!String.IsNullOrEmpty(name))
-            {
-                var model = (from s in db.projects
-                             where s.NameProject.Contains(name)
-                             select s);
-                return View(model);
-            }
-   
-          
-         public ActionResult Index(string searchString = null) 
- {           
-      var project1 = from m in db.projects 
-                   select m;
-      var project2 = from m in db.projects
-                     select m;
-
-     if (!String.IsNullOrEmpty(searchString)) 
-     {
-         int i=0;
-       
-         project1 = project1.Where(s => s.NameProject.Contains(searchString));
-         foreach (var item in project1)
-             i++;
-        
-         if(i!=0)
-         return View(project1);
-
-         i = 0;
-         project2 = project2.Where(s => s.local.Contains(searchString));
-         foreach (var item in project2)
-               i++;
-
-         if (i != 0)
-             return View(project2); 
-     }
-
-     return View(project1); 
- }
-          */
         //
         // GET: /Projects/Details/5
 
